@@ -1,8 +1,11 @@
-from flask import Flask, request
+from flask import Flask, request, send_from_directory
 from rgb import Leds
 import threading
+from flask_cors import CORS
 
-app = Flask(__name__)
+
+app = Flask(__name__, static_folder='frontend',)
+CORS(app)
 leds = Leds()
 leds.all_on((0, 0, 0))
 
@@ -43,9 +46,12 @@ def fade_to():
     return {'error': None, 'rgb': rgb_config}
 
 @app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"
+def index():
+    return app.send_static_file('index.html')
 
+@app.route('/static/<path:path>')
+def send_js(path):
+    return send_from_directory('frontend/static', path)
 
 if __name__ == '__main__':
     try:
