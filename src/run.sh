@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-python3 main.py
+flask run --host=0.0.0.0
 

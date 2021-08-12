@@ -36,7 +36,7 @@ fi
 
 if [ "$clean" = "y" ] || [ "$clean" = "yes" ]; then
     echo "[+] Cleaning dir"
-    ssh $url "rm -rf $TARGET_DIR*"    
+    ssh $URL "rm -rf $TARGET_DIR*"    
 fi
 # 
 
@@ -51,7 +51,7 @@ if [ "$PID" != "" ]; then
     sleep 3
 fi
 
-if [ "$clean" = "y" ] || [ "$clean" = "yes" ]; then
+if [ "$run" = "y" ] || [ "$run" = "yes" ]; then
     echo "[+] Running deployed version"
     ssh $URL "cd $TARGET_DIR && chmod +x run.sh && ./run.sh" &>/dev/null &
 fi
