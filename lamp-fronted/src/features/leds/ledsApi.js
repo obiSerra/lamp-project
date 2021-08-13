@@ -9,6 +9,16 @@ export function updateLeds(rgb = [0, 0, 0]) {
     rgb,
   });
 }
+export function fadeTo(rgb = [0, 0, 0], speed) {
+  return axios.post(`${baseUrl}/leds/fade-to`, {
+    rgb,
+    speed,
+  });
+}
+
+export function getLedsStatus() {
+  return axios.get(`${baseUrl}/leds`);
+}
 
 
 // export function updateLeds(rgb = [0, 0, 0]) {

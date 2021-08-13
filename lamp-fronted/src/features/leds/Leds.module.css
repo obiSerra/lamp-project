@@ -14,5 +14,26 @@
 .picker{
   margin: 20px;
 }
+.animationBtnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin-bottom: 20px;
+}
+.animationBtn{
+  display: flex;
 
+  width: 100px;
+}
 
+.smallInput {
+  width: 50px;
+  padding-bottom: 0;
+}
+.smallInput input {
+  padding-bottom: 8px;
+  margin-bottom: -8px;
+  padding-top: 13px;
+  padding-left: 10px;
+}

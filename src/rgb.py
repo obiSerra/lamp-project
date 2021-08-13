@@ -44,7 +44,6 @@ class Leds():
         target = [t for t in rgb]
         reached = False
         self.is_animation_running = True
-
         while not self.stop_anim and not reached:
             c_rgb = [c for c in self.current_rgb]
             nxt = [
@@ -75,6 +74,5 @@ if __name__ == '__main__':
         leds.all_off()
     except KeyboardInterrupt:
         print("ctrl + c:")
-        exit(1)
     finally:
         leds.all_off()
